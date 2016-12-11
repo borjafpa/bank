@@ -1,8 +1,8 @@
-package com.hellokoding.auth.service;
+package com.borjafpa.bank.service;
 
-import com.hellokoding.auth.model.Role;
-import com.hellokoding.auth.model.User;
-import com.hellokoding.auth.repository.UserRepository;
+import com.borjafpa.bank.model.Role;
+import com.borjafpa.bank.model.User;
+import com.borjafpa.bank.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -1,7 +1,18 @@
-package com.hellokoding.auth.model;
+package com.borjafpa.bank.model;
 
-import javax.persistence.*;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "user")
@@ -11,6 +22,7 @@ public class User {
     private String password;
     private String passwordConfirm;
     private Set<Role> roles;
+    private Set<Transaction> transactions;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -55,5 +67,14 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+    
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    public Set<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(Set<Transaction> transactions) {
+        this.transactions = transactions;
     }
 }

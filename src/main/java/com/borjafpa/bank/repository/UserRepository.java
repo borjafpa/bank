@@ -1,6 +1,6 @@
-package com.hellokoding.auth.repository;
+package com.borjafpa.bank.repository;
 
-import com.hellokoding.auth.model.User;
+import com.borjafpa.bank.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

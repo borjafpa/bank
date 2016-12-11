@@ -1,9 +1,5 @@
-package com.hellokoding.auth.web;
+package com.borjafpa.bank.web;
 
-import com.hellokoding.auth.model.User;
-import com.hellokoding.auth.service.SecurityService;
-import com.hellokoding.auth.service.UserService;
-import com.hellokoding.auth.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,14 +8,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.borjafpa.bank.model.User;
+import com.borjafpa.bank.service.SecurityService;
+import com.borjafpa.bank.service.UserService;
+import com.borjafpa.bank.validator.UserValidator;
+
 @Controller
 public class UserController {
     @Autowired
     private UserService userService;
-
+    
     @Autowired
     private SecurityService securityService;
-
+    
     @Autowired
     private UserValidator userValidator;
 
@@ -39,7 +40,7 @@ public class UserController {
         }
 
         userService.save(userForm);
-
+        
         securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
         return "redirect:/welcome";

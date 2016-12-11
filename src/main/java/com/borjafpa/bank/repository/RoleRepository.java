@@ -1,6 +1,6 @@
-package com.hellokoding.auth.repository;
+package com.borjafpa.bank.repository;
 
-import com.hellokoding.auth.model.Role;
+import com.borjafpa.bank.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RoleRepository extends JpaRepository<Role, Long>{
